@@ -1,8 +1,12 @@
 body {
-  background-color: black;
+  background-image: url(../images/flag.png);
 }
-div {
-  border-style: solid;
+
+.body {
+  border-radius: 5%;
+  background-color: rgba(0,0,0,.8);
+  display: none;
+  min-width: 770px
 }
 
 .gameplay {
@@ -11,6 +15,7 @@ div {
 
 
 .data {
+  border-radius: 10%;
   margin-right: 50px;
   height: 60vh;
   width: 20%;
@@ -22,7 +27,7 @@ div {
   height: 60vh;
   width: 70%;
   display: inline-block;
-  background-color: black;
+  background-color: background-color: rgba(0,0,0,.8);
   background-image: url(../images/oval-office.jpg);
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,10 +37,12 @@ div {
   width: 100%;
   margin-top: 20px;
   height: 30vh;
-  background-color: black;
+  background-color: background-color: rgba(0,0,0,.8);
 }
 
 .commands {
+  border-radius: 10%;
+  text-align: center;
   height: 100%;
   width: 50%;
   float: left;
@@ -43,6 +50,7 @@ div {
 }
 
 .reactions {
+  border-radius: 10%;
   background-color: grey;
   background-image: url();
   background-repeat: no-repeat;
@@ -54,12 +62,54 @@ div {
 }
 
 button {
+  margin: 5%;
   background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 5px 5px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+
+h2 {
+  margin-top: 35px;
+  text-align: center;
+}
+
+p {
+ text-align: center;
+}
+
+#cover {
+  text-align: center;
+  background-color: black;
+  background-image: url(../images/flag.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+  height:100%;
+  width:100%;
+}
+
+#start {
+  text-shadow: 2px 2px #ff0000;
+  box-shadow: 0 0 15px 20px black;
+  background-image: url(../images/stars.jpeg);
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+  border-radius: 60%;
+  margin-top: 18%;
+  height: 200px;
+  width: 400px;
+}
+
+#start:hover {
+    box-shadow: 0 0 40px 40px red;
 }

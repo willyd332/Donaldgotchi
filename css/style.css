@@ -1,0 +1,54 @@
+body {
+  background-color: black;
+}
+div {
+  border-style: solid;
+}
+
+.gameplay {
+  width: 100%;
+}
+
+
+.data {
+  margin-right: 50px;
+  height: 60vh;
+  width: 20%;
+  float: left;
+  background-color: white;
+}
+
+.office {
+  height: 60vh;
+  width: 70%;
+  display: inline-block;
+  background-color: black;
+  background-image: url(../images/oval-office.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.interface {
+  width: 100%;
+  margin-top: 20px;
+  height: 30vh;
+  background-color: black;
+}
+
+.commands {
+  height: 100%;
+  width: 50%;
+  float: left;
+  background-color: white;
+}
+
+.reactions {
+  background-color: grey;
+  background-image: url();
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 47%;
+  float: right;
+}

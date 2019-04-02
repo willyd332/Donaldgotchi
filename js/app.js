@@ -18,12 +18,12 @@ $('.restart').on('click', function() {
 })
 
 
-let currentHorizontal = 400;
+let currentHorizontal = 600;
 let currentVertical = 250;
 const moveAround = () => {
   let horizontalChange = (Math.floor(Math.random() * 70) - 35);
 
-  if (currentHorizontal > 650 && horizontalChange > 0) {
+  if (currentHorizontal > 750 && horizontalChange > 0) {
     horizontalChange = horizontalChange * (0 - 1)
   }
   if (currentHorizontal < 40 && horizontalChange < 0) {

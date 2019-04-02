@@ -1,8 +1,8 @@
 $(window).resize(function() {
   if ($(window).width() < 1265) {
-    $('.office').css('background-image', 'url(../images/oval-office.jpg)');
+    $('.office').css('background-image', "url('images/oval-office.jpg')");
   } else {
-    $('.office').css('background-image', 'url(../images/oval-office2.jpg)')
+    $('.office').css('background-image', "url('images/oval-office2.jpg')")
   }
   if ($(window).width() < 1000) {
     $('.reactions').css('display','none')
@@ -11,6 +11,7 @@ $(window).resize(function() {
   }
 })
 
+console.log($('.office').width());
 
 $('.restart').on('click', function() {
   document.location.reload()
@@ -22,7 +23,7 @@ let currentVertical = 250;
 const moveAround = () => {
   let horizontalChange = (Math.floor(Math.random() * 70) - 35);
 
-  if (currentHorizontal > 1000 && horizontalChange > 0) {
+  if (currentHorizontal > 650 && horizontalChange > 0) {
     horizontalChange = horizontalChange * (0 - 1)
   }
   if (currentHorizontal < 40 && horizontalChange < 0) {
@@ -148,7 +149,8 @@ if (pauseState === ''){
   $('.reactions').remove()
   $('#trump').remove()
   gameOver = true;
-  $('.office').css("background-image", "url(../images/youre-fired.gif)");
+  $('.office').css("background-image", "url('images/youre-fired.gif')");
+  alert(`YOU'RE FIRED! You have reached age ${trump.age}!`)
 }
 }
 
@@ -288,8 +290,8 @@ const resetText = () => {
 const trumpAction = () => {
   if (pause > seconds) {
     if (pauseState === 'sleeping') {
-      $('.office').css('background-image', 'url(../images/night.jpg)')
-      $('body').css('background-image', 'url(../images/night.jpg)')
+      $('.office').css('background-image', 'url("images/night.jpg")')
+      $('body').css('background-image', 'url("images/night.jpg")')
       if (seconds % 3 === 0) {
         $('#trump').attr('src', 'images/newtrumpbed.gif')
       }
@@ -311,8 +313,8 @@ const evolveTrump = () => {
 const trumpDefault = () => {
   if (pause === seconds) {
     $('.commands').css('display', 'block');
-    $('.office').css('background-image', 'url(../images/oval-office.jpg)')
-    $('body').css('background-image', 'url(../images/gold.jpg)')
+    $('.office').css('background-image', 'url("images/oval-office.jpg")')
+    $('body').css('background-image', 'url("images/gold.jpg")')
     $('#trump').attr('src', 'images/trump.png')
     pauseState = '';
   }
@@ -372,13 +374,13 @@ $('#play').on('click', function() {
     $('#trump').attr('src', 'images/blank.png')
     const num = Math.floor(Math.random() * 4);
     if (num === 0) {
-      $('.office').css('background-image', 'url(../images/petting-trump.gif)')
+      $('.office').css('background-image', 'url("images/petting-trump.gif")')
     } else if (num === 1) {
-      $('.office').css('background-image', 'url(../images/trump-golf.gif)')
+      $('.office').css('background-image', 'url("images/trump-golf.gif")')
     } else if (num === 2) {
-      $('.office').css('background-image', 'url(../images/trump-football.gif)')
+      $('.office').css('background-image', 'url("images/trump-football.gif")')
     } else if (num === 3) {
-      $('.office').css('background-image', 'url(../images/trump-basketball.gif)')
+      $('.office').css('background-image', 'url("images/trump-basketball.gif")')
     }
   }
 })

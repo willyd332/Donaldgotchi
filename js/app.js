@@ -360,11 +360,3 @@ $('#play').on('click', function() {
     }
   }
 })
-
-/*
-still to do:
-
-fix command section asthetics/make it look better,
-remake TV gif activity to be more varied and random
-
-*/

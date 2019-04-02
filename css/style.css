@@ -157,8 +157,8 @@ h1 {
 	max-height: 1000px;
 
 	transition-property: all;
-	transition-duration: 5s;
-	transition-timing-function: cubic-bezier(0, .5, 2, 4);
+	transition-duration: .8s;
+	transition-timing-function: cubic-bezier(0, .5, 1, 1);
 
 
   font-family: 'Archivo Black', sans-serif;

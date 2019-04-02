@@ -42,33 +42,6 @@ const moveAround = () => {
   $('#trump').attr('style', `transform:translate3d(${currentHorizontal}px, ${currentVertical}px, 0px)`)
 }
 
-{ // PSEUDO
-
-  // As time increases:
-  // Hunger must increase
-  // exhaustion must increases
-  // Boredom must increase
-  // Age must increase
-  // If any of these properties reach 10, You're Fired!
-  // At various set values along the way, reaction box...
-  // ...will update
-
-
-  // When you click buttons
-  // Feed button reduces hunger and calls eating trump
-  // Goodnight button reduced exhaustion/turns off the lights
-  // Play button reduces boredom triggers a play reaction
-
-
-  // at a certain age
-  // trump will evolve into money trump
-
-
-  // trump must float around the oval office
-
-  // at a certain level You get to build a wall and win
-
-}
 
 let pauseState2 = '';
 let moving;
@@ -130,6 +103,7 @@ const changeReaction = () => {
 
 const secondsGoUp = () => {
   seconds++;
+  console.log(seconds);
   if (seconds % 12 === 0){
     changeReaction();
   }
@@ -139,7 +113,8 @@ const secondsGoUp = () => {
 $('#start').on('click', function() {
   moving = setInterval(moveAround, 400);
   timePassing = setInterval(secondsGoUp, interval)
-  $('#cover').remove();
+  $('#cover').css('max-height', '0px')
+//  $('#cover').remove();
   $('.body').css('display', 'block')
 })
 
@@ -319,6 +294,7 @@ const trumpDefault = () => {
     pauseState = '';
   }
 }
+
 
 const render = () => {
   increaseAge();

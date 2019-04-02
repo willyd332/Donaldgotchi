@@ -110,6 +110,9 @@ button {
 
 button:hover {
   box-shadow: 0 0 10px 10px black;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 }
 
 h2 {
@@ -138,14 +141,34 @@ p {
   margin-top: 0px;
 }
 
+h1 {
+  text-shadow: 5px 5px black;
+  box-shadow: 0 0 5px 5px #d4af37;
+  color: #d4af37;
+  margin-top: 10%;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 60px;
+  background: -webkit-linear-gradient(#eee, #333);
+}
+
 #cover {
+
+  overflow-y: hidden;
+	max-height: 1000px;
+
+	transition-property: all;
+	transition-duration: 5s;
+	transition-timing-function: cubic-bezier(0, .5, 2, 4);
+
+
   font-family: 'Archivo Black', sans-serif;
   text-align: center;
   background-color: black;
   background-image: url('../images/flag.png');
   background-repeat: no-repeat;
   background-size: cover;
-  position:absolute;
+  background-position: center;
+  position: absolute;
   top:0;
   left:0;
   bottom:0;
@@ -155,8 +178,9 @@ p {
 }
 
 #start {
+
   font-family: 'Archivo Black', sans-serif;
-  text-shadow: 2px 2px #ff0000;
+  text-shadow: 1px 3px #ff0000;
   box-shadow: 0 0 15px 20px black;
   background-image: url('../images/stars.jpeg');
   color: black;
@@ -164,7 +188,7 @@ p {
   font-weight: bold;
   border-radius: 60%;
   margin-top: 0px;
-  margin-top: 18%;
+  margin-top: 7%;
   height: 200px;
   width: 400px;
 }

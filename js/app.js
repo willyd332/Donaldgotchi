@@ -13,14 +13,13 @@ $('.restart').on('click', function(){
 
 let currentHorizontal = 400;
 let currentVertical = 250;
-
 const moveAround = () => {
   let horizontalChange = (Math.floor(Math.random()*70)-35);
-  console.log(horizontalChange);
+
   if (currentHorizontal > 370 && horizontalChange > 0) {horizontalChange = horizontalChange * (0-1)}
     if (currentHorizontal > 370 && horizontalChange > 0) {horizontalChange = horizontalChange * (0-1)}
     if (currentHorizontal < 40 && horizontalChange < 0) {horizontalChange = horizontalChange * (0-1)}
-  console.log(horizontalChange);
+
   currentHorizontal += horizontalChange;
   let verticalChange = (Math.floor(Math.random()*70)-35);
   if (currentVertical > 230 && verticalChange > 0) {verticalChange = verticalChange * (0-1)}
@@ -59,17 +58,20 @@ const moveAround = () => {
 
 }
 
+let pauseState2 = '';
 let moving;
 let pause = 0;
 let pauseState = '';
 let interval = 750;
 let timePassing;
 let seconds = 0;
+
 const secondsGoUp = () => {
   seconds++;
-  console.log(seconds);
+
   render();
 }
+
 $('#start').on('click', function() {
   moving = setInterval(moveAround, 400);
   timePassing = setInterval(secondsGoUp, interval)
@@ -79,15 +81,26 @@ $('#start').on('click', function() {
 
 const endGame = () => {
   clearInterval(timePassing);
+  $('.reactions').remove()
   $('#trump').remove()
   $('.office').css("background-image","url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/youre-fired.gif)");
-  $('.reactions').remove()
-  $('.commands').remove()
+}
+
+const celebrate = () => {
+  $('#TV').attr("src","/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/dancing-donald.gif");
+  trump.hunger = 0;
+  trump.sleepiness = 0;
+  trump.boredom = 0;
+  interval = 20;
+  alert("Congratulations! Age 10!")
+    $('.hunger').css('color', 'black');
+    $('.boredom').css('color', 'black');
+    $('.sleepiness').css('color', 'black');
 }
 
 class President {
   constructor(age, hunger, sleepiness, boredom) {
-    this.age = 1;
+    this.age = 19;
     this.hunger = 0;
     this.sleepiness = 0;
     this.boredom = 0;
@@ -102,8 +115,9 @@ const trump = new President();
 
 const increaseAge = () => {
   if (seconds % 20 === 0) {
-    console.log("age++");
+
     trump.age++
+
   }
   if (trump.age === 3) {
     interval = interval/2;
@@ -112,11 +126,15 @@ const increaseAge = () => {
   } else if (trump.age === 9){
     interval = interval/2;
   }
+  if (trump.age === 10 && pauseState2 === ''){
+    celebrate()
+    pauseState2 = 'celebrate';
+  }
 }
 
 const increaseHunger = () => {
   if (seconds % 10 === 0) {
-    console.log("hunger++");
+
     trump.hunger++
   }
   if (trump.hunger === 10) {
@@ -126,7 +144,7 @@ const increaseHunger = () => {
 
 const increaseSleepiness = () => {
   if (seconds % 15 === 0) {
-    console.log("sleep++");
+
     trump.sleepiness++
   }
   if (trump.sleep === 10) {
@@ -136,7 +154,7 @@ const increaseSleepiness = () => {
 
 const increaseBoredom = () => {
   if (seconds % 7 === 0) {
-    console.log("boredom++");
+
     trump.boredom++
   }
   if (trump.boredom === 10) {
@@ -146,21 +164,33 @@ const increaseBoredom = () => {
 
 const updateData = () => {
   $('.age').text(trump.age);
-  $('.hunger').text(trump.hunger);
-  $('.sleepiness').text(trump.sleepiness);
-  $('.boredom').text(trump.boredom);
+  $('#hunger').text(trump.hunger);
+  $('#sleepiness').text(trump.sleepiness);
+  $('#boredom').text(trump.boredom);
 }
 
 const reactions = () => {
   if (seconds % 3 === 0 && pauseState === ''){
-  if (trump.hunger === 7 || trump.hunger === 9) {
-    $('.reactions').css('background-image','url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/hungry-trump.gif)')
-  } else if (trump.sleepiness === 7 || trump.sleepiness === 9) {
-    $('.reactions').css('background-image','url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/turn-off-lights.gif)')
-  } else if (trump.boredom === 7 || trump.boredom === 9) {
-    $('.reactions').css('background-image','url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/bored-trump.gif)')
+  if (trump.hunger === 5 || trump.hunger === 7) {
+    $('#TV').attr('src','/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/hungry-trump.gif')
+  } else if (trump.sleepiness === 5 || trump.sleepiness === 7) {
+    $('#TV').attr('src','/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/turn-off-lights.gif')
+  } else if (trump.boredom === 5 || trump.boredom === 7) {
+    $('#TV').attr('src','/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/bored-trump.gif')
   }
 }
+}
+
+const textAlert = () => {
+  if (trump.hunger > 6){
+    $('.hunger').css('color', 'red');
+  }
+  if (trump.boredom > 6) {
+    $('.boredom').css('color', 'red');
+  }
+  if (trump.sleepiness > 6) {
+    $('.sleepiness').css('color', 'red');
+  }
 }
 
 const render = () => {
@@ -169,6 +199,7 @@ const render = () => {
   increaseBoredom();
   increaseSleepiness();
   updateData();
+  textAlert();
   reactions();
   if (pause > seconds){
     if (pauseState === 'sleeping'){
@@ -187,11 +218,11 @@ const render = () => {
   if (pause === seconds) {
     $('.commands').css('display', 'block');
     $('.office').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/oval-office.jpg)')
-    $('body').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/flag.png)')
+    $('body').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/gold.jpg)')
     $('#trump').attr('src','/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trump.png')
     pauseState = '';
   }
-  if (trump.age === 7){
+  if (trump.age >= 7 && pauseState === ''){
     $('#trump').attr('src','/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/happy-trump.gif')
   }
 }
@@ -216,7 +247,7 @@ $('#feed').on('click', function(){
 })
 
 $('#lights').on('click', function(){
-  console.log(pauseState);
+
   if (pauseState === ''){
 
     pause = seconds + 10;
@@ -231,7 +262,7 @@ $('#play').on('click', function() {
     if (trump.boredom < 0){
       trump.boredom = 0;
     }
-  pause = seconds + 10;
+  pause = seconds + 7;
   pauseState = 'playing';
   $('#trump').attr('src','/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/blank.png')
   const num = Math.floor(Math.random() * 4);
@@ -246,14 +277,3 @@ $('#play').on('click', function() {
   }
 }
 })
-
-
-
-/*
-you still need to:
-make it look good,
-make the pacing better,
-animate trumps head,
-add reactions...
-maybe more idk
-*/

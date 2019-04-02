@@ -1,8 +1,8 @@
 $(window).resize(function() {
   if ($(window).width() < 1265) {
-    $('.office').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/oval-office.jpg)');
+    $('.office').css('background-image', 'url(../images/oval-office.jpg)');
   } else {
-    $('.office').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/oval-office2.jpg)')
+    $('.office').css('background-image', 'url(../images/oval-office2.jpg)')
   }
   if ($(window).width() < 1000) {
     $('.reactions').css('display','none')
@@ -41,32 +41,11 @@ const moveAround = () => {
   $('#trump').attr('style', `transform:translate3d(${currentHorizontal}px, ${currentVertical}px, 0px)`)
 }
 
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-/// **** ADDD MOOORREE TVVV GIFS!!!!
-
-
 { // PSEUDO
 
   // As time increases:
   // Hunger must increase
-  // Sleepiness must increases
+  // exhaustion must increases
   // Boredom must increase
   // Age must increase
   // If any of these properties reach 10, You're Fired!
@@ -76,7 +55,7 @@ const moveAround = () => {
 
   // When you click buttons
   // Feed button reduces hunger and calls eating trump
-  // Goodnight button reduced sleepiness/turns off the lights
+  // Goodnight button reduced exhaustion/turns off the lights
   // Play button reduces boredom triggers a play reaction
 
 
@@ -101,28 +80,49 @@ let gameOver = false;
 let sleepTime = 15;
 let hungerTime = 10;
 
+
 const changeReaction = () => {
-  let num = Math.floor(Math.random() * 10);
+  let num = Math.floor(Math.random() * 20);
   if (num === 0){
-    $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trumpreactions/trumpreact0.gif')
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact0.gif')
   } else if (num === 1){
-    $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trumpreactions/trumpreact1.gif')
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact1.gif')
   } else if (num === 2){
-    $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trumpreactions/trumpreact2.gif')
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact2.gif')
   } else if (num === 3){
-    $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trumpreactions/trumpreact3.gif')
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact3.gif')
   } else if (num === 4){
-    $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trumpreactions/trumpreact4.gif')
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact4.gif')
   } else if (num === 5){
-    $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trumpreactions/trumpreact5.gif')
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact5.gif')
   } else if (num === 6){
-    $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trumpreactions/trumpreact6.gif')
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact6.gif')
   } else if (num === 7){
-    $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trumpreactions/trumpreact7.gif')
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact7.gif')
   } else if (num === 8){
-    $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trumpreactions/trumpreact8.gif')
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact8.gif')
   } else if (num === 9){
-    $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trumpreactions/trumpreact9.gif')
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact9.gif')
+  } else if (num === 10){
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact10.gif')
+  } else if (num === 11){
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact11.gif')
+  } else if (num === 12){
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact12.gif')
+  } else if (num === 13){
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact13.gif')
+  } else if (num === 14){
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact14.gif')
+  } else if (num === 15){
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact15.gif')
+  } else if (num === 16){
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact16.gif')
+  } else if (num === 17){
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact17.gif')
+  } else if (num === 18){
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact18.gif')
+  } else if (num === 19){
+    $('#TV').attr('src', 'images/trumpreactions/trumpreact19.gif')
   }
 }
 
@@ -148,26 +148,26 @@ if (pauseState === ''){
   $('.reactions').remove()
   $('#trump').remove()
   gameOver = true;
-  $('.office').css("background-image", "url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/youre-fired.gif)");
+  $('.office').css("background-image", "url(../images/youre-fired.gif)");
 }
 }
 
 const celebrate = () => {
-  $('#TV').attr("src", "/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/dancing-donald.gif");
+  $('#TV').attr("src", "images/dancing-donald.gif");
   trump.hunger = 0;
-  trump.sleepiness = 0;
+  trump.exhaustion = 0;
   trump.boredom = 0;
   alert(`Congratulations! Trump has reached age ${trump.age}!`)
   $('.hunger').css('color', 'gold');
   $('.boredom').css('color', 'gold');
-  $('.sleepiness').css('color', 'gold');
+  $('.exhaustion').css('color', 'gold');
 }
 
 class President {
-  constructor(age, hunger, sleepiness, boredom) {
+  constructor(age, hunger, exhaustion, boredom) {
     this.age = 1;
     this.hunger = 0;
-    this.sleepiness = 0;
+    this.exhaustion = 0;
     this.boredom = 0;
   }
 }
@@ -210,10 +210,10 @@ const increaseHunger = () => {
   }
 }
 
-const increaseSleepiness = () => {
+const increaseexhaustion = () => {
   if (seconds % sleepTime === 0) {
 
-    trump.sleepiness++
+    trump.exhaustion++
   }
   if (trump.sleep === 10) {
     endGame();
@@ -233,18 +233,18 @@ const increaseBoredom = () => {
 const updateData = () => {
   $('.age').text(trump.age);
   $('#hunger').text(trump.hunger);
-  $('#sleepiness').text(trump.sleepiness);
+  $('#exhaustion').text(trump.exhaustion);
   $('#boredom').text(trump.boredom);
 }
 
 const reactions = () => {
   if (seconds % 3 === 0 && pauseState === '') {
     if (trump.hunger === 5 || trump.hunger === 7) {
-      $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/hungry-trump.gif')
-    } else if (trump.sleepiness === 5 || trump.sleepiness === 7) {
-      $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/turn-off-lights.gif')
+      $('#TV').attr('src', 'images/hungry-trump.gif')
+    } else if (trump.exhaustion === 5 || trump.exhaustion === 7) {
+      $('#TV').attr('src', 'images/turn-off-lights.gif')
     } else if (trump.boredom === 5 || trump.boredom === 7) {
-      $('#TV').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/bored-trump.gif')
+      $('#TV').attr('src', 'images/bored-trump.gif')
     }
   }
 }
@@ -256,8 +256,8 @@ const textAlert = () => {
   if (trump.boredom > 6) {
     $('.boredom').css('color', 'red');
   }
-  if (trump.sleepiness > 6) {
-    $('.sleepiness').css('color', 'red');
+  if (trump.exhaustion > 6) {
+    $('.exhaustion').css('color', 'red');
   }
 }
 
@@ -269,8 +269,8 @@ const resetText = () => {
     if (trump.boredom < 6) {
       $('.boredom').css('color', 'white');
     }
-    if (trump.sleepiness < 6) {
-      $('.sleepiness').css('color', 'white');
+    if (trump.exhaustion < 6) {
+      $('.exhaustion').css('color', 'white');
     }
   } else {
     if (trump.hunger < 6) {
@@ -279,8 +279,8 @@ const resetText = () => {
     if (trump.boredom < 6) {
       $('.boredom').css('color', 'gold');
     }
-    if (trump.sleepiness < 6) {
-      $('.sleepiness').css('color', 'gold');
+    if (trump.exhaustion < 6) {
+      $('.exhaustion').css('color', 'gold');
     }
   }
 }
@@ -288,15 +288,15 @@ const resetText = () => {
 const trumpAction = () => {
   if (pause > seconds) {
     if (pauseState === 'sleeping') {
-      $('.office').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/night.jpg)')
-      $('body').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/night.jpg)')
+      $('.office').css('background-image', 'url(../images/night.jpg)')
+      $('body').css('background-image', 'url(../images/night.jpg)')
       if (seconds % 3 === 0) {
-        $('#trump').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/newtrumpbed.gif')
+        $('#trump').attr('src', 'images/newtrumpbed.gif')
       }
     }
     if (pauseState === 'eating') {
       if (seconds % 3 === 0) {
-        $('#trump').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/eating-donald.gif')
+        $('#trump').attr('src', 'images/eating-donald.gif')
       }
     }
   }
@@ -304,16 +304,16 @@ const trumpAction = () => {
 
 const evolveTrump = () => {
   if (trump.age >= 10 && pauseState === '') {
-    $('#trump').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/happy-trump.gif')
+    $('#trump').attr('src', 'images/happy-trump.gif')
   }
 }
 
 const trumpDefault = () => {
   if (pause === seconds) {
     $('.commands').css('display', 'block');
-    $('.office').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/oval-office.jpg)')
-    $('body').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/gold.jpg)')
-    $('#trump').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trump.png')
+    $('.office').css('background-image', 'url(../images/oval-office.jpg)')
+    $('body').css('background-image', 'url(../images/gold.jpg)')
+    $('#trump').attr('src', 'images/trump.png')
     pauseState = '';
   }
 }
@@ -322,7 +322,7 @@ const render = () => {
   increaseAge();
   increaseHunger();
   increaseBoredom();
-  increaseSleepiness();
+  increaseexhaustion();
   updateData();
   textAlert();
   resetText();
@@ -334,9 +334,9 @@ const render = () => {
 
 const sleep = () => {
   $('.commands').css('display', 'none');
-  trump.sleepiness -= 2;
-  if (trump.sleepiness < 0) {
-    trump.sleepiness = 0;
+  trump.exhaustion -= 2;
+  if (trump.exhaustion < 0) {
+    trump.exhaustion = 0;
   }
 }
 
@@ -369,16 +369,16 @@ $('#play').on('click', function() {
     }
     pause = seconds + 7;
     pauseState = 'playing';
-    $('#trump').attr('src', '/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/blank.png')
+    $('#trump').attr('src', 'images/blank.png')
     const num = Math.floor(Math.random() * 4);
     if (num === 0) {
-      $('.office').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/petting-trump.gif)')
+      $('.office').css('background-image', 'url(../images/petting-trump.gif)')
     } else if (num === 1) {
-      $('.office').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trump-golf.gif)')
+      $('.office').css('background-image', 'url(../images/trump-golf.gif)')
     } else if (num === 2) {
-      $('.office').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trump-football.gif)')
+      $('.office').css('background-image', 'url(../images/trump-football.gif)')
     } else if (num === 3) {
-      $('.office').css('background-image', 'url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/trump-basketball.gif)')
+      $('.office').css('background-image', 'url(../images/trump-basketball.gif)')
     }
   }
 })

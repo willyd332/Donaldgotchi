@@ -21,6 +21,7 @@ body {
 
 
 .data {
+  box-shadow: 0px 0px 15px 15px white;
   font-family: 'Archivo Black', sans-serif;
   border-radius: 10%;
   margin-right: 50px;
@@ -34,12 +35,20 @@ body {
 }
 
 .office {
+  margin-top: 25px;
+  box-shadow: 0 0 30px 30px black;
+  border-image-source: url("/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/backgroundborder.png");
+  border-image-slice: 100;
+  border-image-width: 30;
+  border-image-outset: 10;
+  border-image-repeat: round;
+  border-style: solid;
   font-family: 'Archivo Black', sans-serif;
   height: 60vh;
   width: 70%;
   display: inline-block;
   background-color: background-color: rgba(0,0,0,.8);
-  background-image: url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/oval-office.jpg);
+  background-image: url(/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/oval-office2.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -61,6 +70,7 @@ body {
 .commands {
   font-family: 'Archivo Black', sans-serif;
   border-radius: 10%;
+  margin-left: 2%;
   height: 100%;
   width: 50%;
   float: left;
@@ -84,10 +94,14 @@ body {
 }
 
 button {
+  /* border-image-source: url("/Users/peterdinneen/general-assembly/Tamagotchi/Tomagotchi/images/goldbuttons2.jpg");
+  border-image-slice: 10;
+  border-image-width: 3;
+  border-image-outset: 1;
+  border-image-repeat: round; */
   font-family: 'Archivo Black', sans-serif;
   border-radius: 15%;
   background-color: black;
-  border: none;
   color: gold;
   padding: 5px 5px;
   text-align: center;
@@ -125,6 +139,12 @@ p {
   background-color: black;
   color: white;
   text-align: center;
+}
+.boredom {
+  margin-top: 0px;
+}
+.sleepiness {
+  margin-top: 0px;
 }
 
 #cover {
@@ -169,15 +189,17 @@ p {
 
 .restart {
   font-family: 'Archivo Black', sans-serif;
-  margin-top: 0px;
   float: right;
+  margin-top: 30px;
+  margin-left: 5%;
+  margin-right: 5%;
   height: 50px;
-  width: 100px;
+  width: 90%;
   font-size: 16px;
 }
 
 .reactions img {
-  font-family: 'Archivo Black', sans-serif;  
+  font-family: 'Archivo Black', sans-serif;
   width: 330px;
   height: 200px;
   margin: 23px 0px 25px 65px
